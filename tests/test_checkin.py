@@ -31,6 +31,10 @@ class CheckinResultTests(unittest.TestCase):
     def test_unknown_error_is_failure(self):
         self.assertFalse(checkin.is_normal_checkin_result({'code': 2, 'message': 'Cookie expired'}))
 
+    def test_permission_message_is_treated_as_duplicate_success(self):
+        result = {'code': 1, 'message': '没有权限'}
+        self.assertTrue(checkin.is_normal_checkin_result(result))
+
     @mock.patch('checkin.time.sleep')
     def test_retry_stops_after_success(self, sleep):
         client = FakeClient([

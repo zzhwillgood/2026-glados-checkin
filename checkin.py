@@ -44,6 +44,7 @@ NORMAL_CHECKIN_MESSAGES = (
     "checkin! got",
     "checkin repeats! please try tomorrow",
     "today's observation logged",
+    "没有权限",
 )
 
 # 积分兑换计划 (#11)：消耗 points 积分兑换 days 天会员。
